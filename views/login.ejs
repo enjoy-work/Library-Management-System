@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+<div class="form-container" id="container">
+    <h2>Login</h2>
+    <% if(locals.error) { %>
+        <div class="alert alert-danger" id="danger"><%= error %></div>
+    <% } %>
+    <% if(locals.success) { %>
+        <div class="alert alert-success" id="success"><%= success %></div>
+    <% } %>
+    <form method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" value="<%= locals.username || '' %>" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="role">Role</label>
+             &nbsp;<input type="radio" id="role" name="role" value="librarian" required> Librarian
+             <input type="radio" id="role" name="role" value="user"  required> User<br>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="btnLogin">Login</button>
+            <a href="/register" class="btn btn-link" >Register</a>
+        </div>
+    </form>
+</div>
+<script>
+      $("#main").on('click', function (e){
+      if(e.target.id.toLowerCase() != 'btnlogin')
+      {
+         $("#success").css("display","none");
+         $("#danger").css("display","none");
+      }
+    });
+</script>
+<%- include('partials/footer') %>

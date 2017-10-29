@@ -1,0 +1,10 @@
+body {
+    padding: 20px 0;
+    background-image: url("http://www.pixelstalk.net/wp-content/uploads/2016/08/Awesome-Library-Image.jpg");
+    background-size: cover;
+}
+ 
+.flash-message {
+    margin-top: 20px;
+}
+

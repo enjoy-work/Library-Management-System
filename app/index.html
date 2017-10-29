@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>LMS</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="app_style/app.css" rel="stylesheet" />
+</head>
+<body class="container">
+    <header>
+        <ul class="nav nav-tabs">
+            <li ng-class="{active: activeTab === 'home'}"><a ui-sref="home" style="color: black">Home</a></li>
+            <li ng-class="{active: activeTab === 'addremoveBook'}"><a ui-sref="addremoveBook" style="color: black">Add/Remove Book</a></li>
+            <li ng-class="{active: activeTab === 'issuereturnBook'}"><a ui-sref="issuereturnBook" style="color: black">Issue/Return Book</a></li>
+            <li><a href="/login" target="_self" style="color: black">Logout</a></li>
+        </ul>
+        <div class="flash-message" ng-if="flash">
+            <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
+        </div>
+    </header>
+
+    <main  ui-view></main>
+
+    <footer></footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="app.js"></script>
+    <script src="app_services/user.service.js"></script>
+    <script src="app_services/flash.service.js"></script>
+    <script src="addremoveBook/index.controller.js"></script>
+    <script src="issuereturnBook/index.controller.js"></script>
+</body>
+</html>
